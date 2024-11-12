@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "nholuongut.vite",
+    "Vue.volar",
+    "nholuongut.iconify",
+    "dbaeumer.vscode-eslint",
+    "nholuongut.unocss",
+    "csstools.postcss",
+    "nholuongut.pnpm-catalog-lens"
+  ]
+}

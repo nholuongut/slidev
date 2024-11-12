@@ -1,0 +1,127 @@
+{
+  "name": "@slidev/cli",
+  "type": "module",
+  "version": "0.50.0-beta.5",
+  "description": "Presentation slides for developers",
+  "author": "nholuongut <anthonyfu117@hotmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/nholuongut",
+  "homepage": "https://sli.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nholuongut/slidev"
+  },
+  "bugs": "https://github.com/nholuongut/slidev/issues",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./*": "./*"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "slidev": "./bin/slidev.mjs"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "template.md"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsup node/index.ts node/cli.ts",
+    "dev": "nr build --watch",
+    "prepublishOnly": "npm run build",
+    "start": "esno node/cli.ts"
+  },
+  "peerDependencies": {
+    "playwright-chromium": "^1.10.0"
+  },
+  "peerDependenciesMeta": {
+    "playwright-chromium": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@nholuongut/ni": "catalog:",
+    "@nholuongut/utils": "catalog:",
+    "@iconify-json/carbon": "catalog:",
+    "@iconify-json/ph": "catalog:",
+    "@iconify-json/svg-spinners": "catalog:",
+    "@lillallol/outline-pdf": "catalog:",
+    "@shikijs/markdown-it": "catalog:",
+    "@shikijs/twoslash": "catalog:",
+    "@shikijs/vitepress-twoslash": "catalog:",
+    "@slidev/client": "workspace:*",
+    "@slidev/parser": "workspace:*",
+    "@slidev/types": "workspace:*",
+    "@unocss/extractor-mdc": "catalog:",
+    "@unocss/reset": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "@vitejs/plugin-vue-jsx": "catalog:",
+    "chokidar": "catalog:",
+    "cli-progress": "catalog:",
+    "connect": "catalog:",
+    "debug": "catalog:",
+    "fast-deep-equal": "catalog:",
+    "fast-glob": "catalog:",
+    "fs-extra": "catalog:",
+    "get-port-please": "catalog:",
+    "global-directory": "catalog:",
+    "htmlparser2": "catalog:",
+    "is-installed-globally": "catalog:",
+    "jiti": "catalog:",
+    "katex": "catalog:",
+    "kolorist": "catalog:",
+    "local-pkg": "catalog:",
+    "lz-string": "catalog:",
+    "magic-string": "catalog:",
+    "magic-string-stack": "catalog:",
+    "markdown-it": "catalog:",
+    "markdown-it-footnote": "catalog:",
+    "markdown-it-mdc": "catalog:",
+    "micromatch": "catalog:",
+    "mlly": "catalog:",
+    "monaco-editor": "catalog:",
+    "open": "catalog:",
+    "pdf-lib": "catalog:",
+    "plantuml-encoder": "catalog:",
+    "postcss-nested": "catalog:",
+    "pptxgenjs": "catalog:",
+    "prompts": "catalog:",
+    "public-ip": "catalog:",
+    "resolve-from": "catalog:",
+    "resolve-global": "catalog:",
+    "semver": "catalog:",
+    "shiki": "catalog:",
+    "shiki-magic-move": "catalog:",
+    "sirv": "catalog:",
+    "source-map-js": "catalog:",
+    "typescript": "catalog:",
+    "unocss": "catalog:",
+    "unplugin-icons": "catalog:",
+    "unplugin-vue-components": "catalog:",
+    "unplugin-vue-markdown": "catalog:",
+    "untun": "catalog:",
+    "uqr": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-inspect": "catalog:",
+    "vite-plugin-remote-assets": "catalog:",
+    "vite-plugin-static-copy": "catalog:",
+    "vite-plugin-vue-server-ref": "catalog:",
+    "vitefu": "catalog:",
+    "vue": "catalog:",
+    "yaml": "catalog:",
+    "yargs": "catalog:"
+  },
+  "devDependencies": {
+    "@hedgedoc/markdown-it-plugins": "catalog:",
+    "@types/micromatch": "catalog:",
+    "@types/plantuml-encoder": "catalog:"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "jsx": "preserve",
+    "lib": ["DOM", "ESNext"],
+    "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "paths": {
+      "@slidev/client": ["./packages/client/index.ts"],
+      "@slidev/client/*": ["./packages/client/*"],
+      "@slidev/types": ["./packages/types/src/index.ts"],
+      "@slidev/parser/fs": ["./packages/parser/src/fs.ts"],
+      "@slidev/parser/core": ["./packages/parser/src/core.ts"],
+      "@slidev/parser": ["./packages/parser/src/index.ts"]
+    },
+    "resolveJsonModule": true,
+    "types": [
+      "vite",
+      "vite/client",
+      "node",
+      "vite-plugin-vue-server-ref/module"
+    ],
+    "strict": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "./*.ts",
+    "./docs/**/*.ts",
+    "./docs/**/*.vue",
+    "./packages/**/*.ts",
+    "./packages/**/*.vue",
+    "./demo/**/*.ts",
+    "./demo/**/*.vue",
+    "./test/**/*.ts"
+  ],
+  "exclude": ["**/dist/**", "**/node_modules/**"]
+}

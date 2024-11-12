@@ -1,0 +1,89 @@
+{
+  "type": "module",
+  "version": "0.50.0-beta.5",
+  "private": true,
+  "packageManager": "pnpm@9.12.2",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "pnpm -r --filter=./packages/** run build",
+    "ci:publish": "zx scripts/publish.mjs",
+    "cy": "cypress open",
+    "cy:fixture": "pnpm -C cypress/fixtures/basic run dev",
+    "demo:build": "zx ./scripts/demo.mjs",
+    "demo:composable-vue": "pnpm -C demo/composable-vue run dev",
+    "demo:vue-runner": "pnpm -C demo/vue-runner run dev",
+    "demo:dev": "pnpm -C demo/starter run dev",
+    "play": "pnpm demo:dev",
+    "dev": "pnpm -r --filter=./packages/** --parallel run dev",
+    "lint": "eslint . --cache",
+    "lint:fix": "nr lint --fix",
+    "typecheck": "vue-tsc --noEmit",
+    "docs": "pnpm -C docs run dev",
+    "docs:build": "pnpm run --filter {./docs}... build && pnpm demo:build",
+    "release": "bumpp package.json packages/*/package.json docs/package.json --all -x \"zx scripts/update-versions.mjs\"",
+    "test": "vitest test",
+    "prepare": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@nholuongut/eslint-config": "catalog:",
+    "@nholuongut/ni": "catalog:",
+    "@nholuongut/utils": "catalog:",
+    "@shikijs/markdown-it": "catalog:",
+    "@slidev/cli": "workspace:*",
+    "@slidev/parser": "workspace:*",
+    "@slidev/types": "workspace:*",
+    "@types/cli-progress": "catalog:",
+    "@types/connect": "catalog:",
+    "@types/debug": "catalog:",
+    "@types/file-saver": "catalog:",
+    "@types/fs-extra": "catalog:",
+    "@types/js-yaml": "catalog:",
+    "@types/katex": "catalog:",
+    "@types/markdown-it": "catalog:",
+    "@types/node": "catalog:",
+    "@types/prompts": "catalog:",
+    "@types/recordrtc": "catalog:",
+    "@types/resolve": "catalog:",
+    "@types/semver": "catalog:",
+    "@types/yargs": "catalog:",
+    "@vueuse/core": "catalog:",
+    "bumpp": "catalog:",
+    "cross-env": "catalog:",
+    "cypress": "catalog:",
+    "eslint": "catalog:",
+    "eslint-plugin-format": "catalog:",
+    "esno": "catalog:",
+    "katex": "catalog:",
+    "lint-staged": "catalog:",
+    "mermaid": "catalog:",
+    "playwright-chromium": "catalog:",
+    "prettier-plugin-slidev": "catalog:",
+    "rimraf": "catalog:",
+    "shiki": "catalog:",
+    "simple-git-hooks": "catalog:",
+    "taze": "catalog:",
+    "tinyexec": "catalog:",
+    "ts-json-schema-generator": "catalog:",
+    "tsup": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:",
+    "vue-tsc": "catalog:",
+    "zx": "catalog:"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@hedgedoc/markdown-it-plugins@2.1.4": "patches/@hedgedoc__markdown-it-plugins@2.1.4.patch"
+    }
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,vue,json}": [
+      "eslint --fix --cache"
+    ]
+  }
+}
